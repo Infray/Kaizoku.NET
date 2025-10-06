@@ -1,5 +1,5 @@
 
-FROM eclipse-temurin:21.0.7_6-jdk-noble AS build
+FROM docker.io/eclipse-temurin:21.0.7_6-jdk-noble AS build
 ARG TARGETPLATFORM
 
 # build abort handler
@@ -14,7 +14,7 @@ RUN cd /tmp && \
       rm -rf /var/lib/apt/lists/* || exit 1; 
 
 # This stage is used when running from VS in fast mode (Default for Debug configuration)
-FROM eclipse-temurin:21.0.7_6-jre-noble
+FROM docker.io/eclipse-temurin:21.0.7_6-jre-noble
 ARG TARGETPLATFORM
 
 # Install envsubst from GNU's gettext project
