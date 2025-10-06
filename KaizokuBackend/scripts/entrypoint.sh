@@ -61,4 +61,4 @@ chown -R "$user_name:$group_name" /config
 chmod -R 777 /config
 
 # Run the app as the correct user
-exec gosu "$user_name" /app/KaizokuBackend "$command"
+#exec gosu "$user_name" /app/KaizokuBackend "$command"
