@@ -52,7 +52,8 @@ ENV HOME=/config/Suwayomi
 WORKDIR /app
 COPY ./bin/$TARGETPLATFORM/ .
 COPY ./scripts/entrypoint.sh /app/entrypoint.sh
+RUN /app/entrypoint.sh
 EXPOSE 9833
 EXPOSE 4567
 ENTRYPOINT ["tini", "--"]
-CMD ["/app/entrypoint.sh"]
+CMD ["/app/KaizokuBackend", "xvfb-run --auto-servernum java"]
